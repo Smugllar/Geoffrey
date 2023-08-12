@@ -2,8 +2,10 @@ extends RigidBody2D
 
 const SPEED = 50.0
 
+var spawn_position = position
+
 #possibly confusingly, the higher then number, the slower it turns (maybe i should come up with a better variable name)
-var turn_speed = 2.0
+var turn_speed = 1.0
 
 #toggles depending on if the player is in the Area2D
 var observe = false
