@@ -5,30 +5,36 @@ const SPEED = 50.0
 #possibly confusingly, the higher then number, the slower it turns (maybe i should come up with a better variable name)
 var turn_speed = 2.0
 
-var move_dir = Vector2()
+#toggles depending on if the player is in the Area2D
+var observe = false
 
+#vector on where the civilian is looking
+var look_direction = Vector2.ZERO
 
 func _physics_process(delta):
 	#delta but times 60 because _physics_process happesn 60 times a second
 	var relevantDelta = delta * 60.0
 	
-	#for if there is no movemetn!!!
-	move_dir = Vector2.ZERO
 	
-	#gets the direction that the character will be moving soon but in a coordinate sorta way
-	var direction = Vector2( Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down") )
+	#makes look_direction basically point towards the player's position relative to the civilian...
+	#that is if observe = true
+	if observe:
+		look_direction = Vector2($/root/Main/Player.position.x - position.x, $/root/Main/Player.position.y - position.y)
 	
-	#i transfer the value of direction to a different variable because it soon gets changed
-	move_dir = direction
-	if move_dir != Vector2.ZERO:
-		move_dir = move_dir.normalized()
-	
-	linear_velocity += move_dir * SPEED * relevantDelta
 	
 	#turn towards the direction of movement
-	var angle_diff = 0 
+	var angle_diff = 0.0 
 	var rotation_vector = Vector2(cos(rotation), sin(rotation))
-	if linear_velocity:
-		angle_diff = rotation_vector.angle_to(linear_velocity)
 	
-	angular_velocity += angle_diff / turn_speed
+	angle_diff = rotation_vector.angle_to(look_direction)
+	angular_velocity += angle_diff / turn_speed * relevantDelta
+
+#these two functions actually do the toggling of the 'observe' variable
+func _on_area_2d_body_entered(body):
+	if "player" in body:
+		observe = true
+
+
+func _on_area_2d_body_exited(body):
+	if "player" in body:
+		observe = false

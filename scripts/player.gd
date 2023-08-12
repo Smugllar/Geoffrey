@@ -1,8 +1,10 @@
 extends RigidBody2D
 
+const player = true
+
 const SPEED = 50.0
 
-#possibly confusingly, the higher then number, the slower it turns (maybe i should come up with a better variable name)
+#possibly confusingly, the higher the number, the slower it turns (maybe i should come up with a better variable name)
 var turn_speed = 2.0
 
 var move_dir = Vector2()
@@ -26,9 +28,9 @@ func _physics_process(delta):
 	linear_velocity += move_dir * SPEED * relevantDelta
 	
 	#turn towards the direction of movement
-	var angle_diff = 0 
+	var angle_diff = 0.0 
 	var rotation_vector = Vector2(cos(rotation), sin(rotation))
 	if linear_velocity:
 		angle_diff = rotation_vector.angle_to(linear_velocity)
 	
-	angular_velocity += angle_diff / turn_speed
+	angular_velocity += angle_diff / turn_speed * relevantDelta
