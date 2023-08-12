@@ -37,6 +37,7 @@ shape = SubResource("CircleShape2D_jefqq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_dslhb")
+debug_color = Color(0.54902, 0.556863, 0.25098, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 

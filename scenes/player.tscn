@@ -19,7 +19,6 @@ animations = [{
 
 [node name="Player" type="RigidBody2D"]
 position = Vector2(0, 1)
-mass = 10.0
 gravity_scale = 0.0
 linear_damp = 5.0
 angular_damp = 5.0
