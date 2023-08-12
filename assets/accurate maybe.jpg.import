@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo25r03ueai7v"
-path="res://.godot/imported/halloween pfp.jpg-f0642c6e657d66d8df803e0806fb8adb.ctex"
+uid="uid://dnxru8xjo1ou0"
+path="res://.godot/imported/accurate maybe.jpg-3610f51d6edc52d88b9a92e33e4a6b14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/halloween pfp.jpg"
-dest_files=["res://.godot/imported/halloween pfp.jpg-f0642c6e657d66d8df803e0806fb8adb.ctex"]
+source_file="res://assets/accurate maybe.jpg"
+dest_files=["res://.godot/imported/accurate maybe.jpg-3610f51d6edc52d88b9a92e33e4a6b14.ctex"]
 
 [params]
 

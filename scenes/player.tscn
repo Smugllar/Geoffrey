@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5a8yg"]
 [ext_resource type="Texture2D" uid="uid://b5afwit7kx1c" path="res://assets/icon.svg" id="1_7yjij"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sw226"]
-radius = 63.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_fiyma"]
+radius = 59.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2md46"]
 animations = [{
@@ -19,9 +19,9 @@ animations = [{
 
 [node name="Player" type="RigidBody2D"]
 position = Vector2(0, 1)
-center_of_mass_mode = 1
 gravity_scale = 0.0
 linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_5a8yg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -29,7 +29,8 @@ process_callback = 0
 position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_sw226")
+shape = SubResource("CircleShape2D_fiyma")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_2md46")
