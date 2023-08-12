@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo2x5fk0khblm"]
+[gd_scene load_steps=6 format=3 uid="uid://bo2x5fk0khblm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5a8yg"]
 [ext_resource type="Texture2D" uid="uid://b5afwit7kx1c" path="res://assets/icon.svg" id="1_7yjij"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fiyma"]
 radius = 59.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ty42"]
+radius = 26.0
+height = 96.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2md46"]
 animations = [{
@@ -28,8 +32,12 @@ script = ExtResource("1_5a8yg")
 process_callback = 0
 position_smoothing_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShapeCircle" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fiyma")
+
+[node name="CollisionShapeFlat" type="CollisionShape2D" parent="."]
+position = Vector2(33, 0)
+shape = SubResource("CapsuleShape2D_7ty42")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708

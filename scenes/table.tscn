@@ -6,11 +6,11 @@
 size = Vector2(372, 152)
 
 [node name="Table" type="RigidBody2D"]
-mass = 5.0
+mass = 3.0
 gravity_scale = 0.0
-linear_damp = 5.0
+linear_damp = 1.0
 angular_velocity = 6.98132
-angular_damp = 5.0
+angular_damp = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.31, 0.126667)

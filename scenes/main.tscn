@@ -6,13 +6,16 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_46vnj")]
-position = Vector2(604, 327)
-
 [node name="Table" parent="." instance=ExtResource("2_5qq61")]
 position = Vector2(942, 366)
 rotation = -0.6353
 angular_velocity = 0.0
 
+[node name="Player" parent="." instance=ExtResource("1_46vnj")]
+position = Vector2(604, 327)
+
 [node name="Civilian" parent="." instance=ExtResource("3_3qbp8")]
 position = Vector2(250, 248)
+
+[node name="Player2" parent="." instance=ExtResource("1_46vnj")]
+position = Vector2(534, 488)
