@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d00y3w3m0suo4"]
+
+[ext_resource type="Script" path="res://scripts/table.gd" id="1_3u1di"]
+[ext_resource type="Texture2D" uid="uid://b5afwit7kx1c" path="res://assets/icon.svg" id="1_077sc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paxvn"]
+size = Vector2(372, 152)
+
+[node name="Table" type="RigidBody2D"]
+mass = 10.0
+gravity_scale = 0.0
+linear_damp = 5.0
+angular_velocity = 6.98132
+angular_damp = 5.0
+script = ExtResource("1_3u1di")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.90625, 1.1875)
+texture = ExtResource("1_077sc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_paxvn")

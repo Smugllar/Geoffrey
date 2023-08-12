@@ -1,8 +1,7 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 
 const SPEED = 50.0
-const JUMP_VELOCITY = -400.0
 
 var move_dir = Vector2()
 
@@ -22,7 +21,6 @@ func _physics_process(delta):
 	if move_dir != Vector2.ZERO:
 		move_dir = move_dir.normalized()
 	
-	velocity += move_dir * SPEED * relevantDelta
-	velocity *= 0.9
+	linear_velocity += move_dir * SPEED * relevantDelta
 	
-	move_and_slide()
+	#move_and_slide()
