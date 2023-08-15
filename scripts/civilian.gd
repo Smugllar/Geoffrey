@@ -19,6 +19,7 @@ var spawn_position = Vector2()
 
 func _ready():
 	spawn_position = position
+	$AnimatedSprite2D.play()
 
 func _physics_process(delta):
 	#delta but times 60 because _physics_process happesn 60 times a second
@@ -49,6 +50,13 @@ func _physics_process(delta):
 	
 	angle_diff = rotation_vector.angle_to(look_direction)
 	angular_velocity += angle_diff / turn_speed * relevantDelta
+	
+	#animation stuff
+	$AnimatedSprite2D.speed_scale = linear_velocity.length() / 100
+	if linear_velocity.length() < 0.5:
+		$AnimatedSprite2D.animation = "idle"
+	else:
+		$AnimatedSprite2D.animation = "walk"
 
 #these two functions actually do the toggling of the 'observe' variable
 func _on_area_2d_body_entered(body):

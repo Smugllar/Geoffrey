@@ -1,21 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://cod1ret36o1nx"]
+[gd_scene load_steps=8 format=3 uid="uid://cod1ret36o1nx"]
 
 [ext_resource type="Script" path="res://scripts/civilian.gd" id="1_het4h"]
-[ext_resource type="Texture2D" uid="uid://dnxru8xjo1ou0" path="res://assets/accurate maybe.jpg" id="1_wglsi"]
+[ext_resource type="Texture2D" uid="uid://cjf3j7x3twc3i" path="res://assets/npc/npc idle.png" id="2_r0afx"]
+[ext_resource type="Texture2D" uid="uid://2x7mfevux0g6" path="res://assets/npc/npc left foot.png" id="3_x0bad"]
+[ext_resource type="Texture2D" uid="uid://dymwim4wnx5ta" path="res://assets/npc/npc right foot.png" id="4_8y1tt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5xfuh"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_wglsi")
+"texture": ExtResource("2_r0afx")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x0bad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8y1tt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jefqq"]
-radius = 55.3263
+radius = 46.0435
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dslhb"]
 radius = 305.026
@@ -27,8 +45,8 @@ script = ExtResource("1_het4h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_5xfuh")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jefqq")
