@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://6fqvnf2joriq"]
+[gd_scene load_steps=16 format=3 uid="uid://6fqvnf2joriq"]
 
 [ext_resource type="Texture2D" uid="uid://bgpykripw1n3k" path="res://assets/level one/background.png" id="1_08udh"]
 [ext_resource type="Texture2D" uid="uid://ck3gno4wx6b15" path="res://assets/level one/walls.png" id="2_se2a5"]
 [ext_resource type="PackedScene" uid="uid://bo2x5fk0khblm" path="res://scenes/player.tscn" id="3_80gs7"]
 [ext_resource type="PackedScene" uid="uid://d00y3w3m0suo4" path="res://scenes/table.tscn" id="4_be735"]
 [ext_resource type="PackedScene" uid="uid://cod1ret36o1nx" path="res://scenes/civilian.tscn" id="5_tmhpn"]
+[ext_resource type="PackedScene" uid="uid://c8vbqrwdxlf7b" path="res://scenes/bed.tscn" id="6_k7yen"]
+[ext_resource type="PackedScene" uid="uid://ffvcdyt0uath" path="res://scenes/small_box.tscn" id="7_h5jmr"]
+[ext_resource type="PackedScene" uid="uid://cq03d1q1jwstw" path="res://scenes/large_box.tscn" id="8_qidju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qd46"]
 size = Vector2(338.5, 13)
@@ -13,9 +16,7 @@ size = Vector2(338.5, 13)
 size = Vector2(14, 631)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c86mp"]
-size = Vector2(178, 20)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_rt1is"]
+size = Vector2(170.581, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogolv"]
 size = Vector2(95.5, 116)
@@ -50,13 +51,9 @@ position = Vector2(871, 445)
 shape = SubResource("RectangleShape2D_f7tvq")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
-position = Vector2(796, 773)
+position = Vector2(792.427, 773.998)
 rotation = -0.272491
 shape = SubResource("RectangleShape2D_c86mp")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
-position = Vector2(870, 896)
-shape = SubResource("CircleShape2D_rt1is")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
 position = Vector2(39.25, 597)
@@ -93,7 +90,7 @@ position = Vector2(561, 473)
 rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource("3_80gs7")]
-position = Vector2(981, 701)
+position = Vector2(1004, 706)
 
 [node name="Civilian" parent="." instance=ExtResource("5_tmhpn")]
 position = Vector2(460, 465)
@@ -101,3 +98,21 @@ position = Vector2(460, 465)
 [node name="Civilian2" parent="." instance=ExtResource("5_tmhpn")]
 position = Vector2(957, 167)
 rotation = -2.41205
+
+[node name="Bed" parent="." instance=ExtResource("6_k7yen")]
+position = Vector2(1070, 150)
+
+[node name="Small Box" parent="." instance=ExtResource("7_h5jmr")]
+position = Vector2(1113, 845)
+
+[node name="Small Box2" parent="." instance=ExtResource("7_h5jmr")]
+position = Vector2(1025, 806)
+
+[node name="Small Box3" parent="." instance=ExtResource("7_h5jmr")]
+position = Vector2(1123, 754)
+
+[node name="Small Box4" parent="." instance=ExtResource("7_h5jmr")]
+position = Vector2(1108, 665)
+
+[node name="Large Box" parent="." instance=ExtResource("8_qidju")]
+position = Vector2(991, 523)

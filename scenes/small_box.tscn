@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ffvcdyt0uath"]
+
+[ext_resource type="Texture2D" uid="uid://w7nduedke6r7" path="res://assets/moving parts/small box.png" id="1_44wtd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jrj1"]
+size = Vector2(80, 78)
+
+[node name="Small Box" type="RigidBody2D"]
+mass = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_44wtd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0jrj1")

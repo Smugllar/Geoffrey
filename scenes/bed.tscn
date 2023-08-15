@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8vbqrwdxlf7b"]
+
+[ext_resource type="Texture2D" uid="uid://bbkwqdd0m8saj" path="res://assets/moving parts/bed.png" id="1_uf8a2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgvfc"]
+size = Vector2(132, 272)
+
+[node name="Bed" type="RigidBody2D"]
+mass = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uf8a2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xgvfc")

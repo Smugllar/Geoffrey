@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal died()
+
 const SPEED = 50.0
 
 #possibly confusingly, the higher then number, the slower it turns (maybe i should come up with a better variable name)
@@ -14,6 +16,7 @@ var look_direction = Vector2.ZERO
 var move_dir = Vector2()
 var scared = false
 var go_home = false
+var alive = true
 
 var spawn_position = Vector2()
 
@@ -57,6 +60,13 @@ func _physics_process(delta):
 	
 	angle_diff = rotation_vector.angle_to(look_direction)
 	angular_velocity += angle_diff / turn_speed * relevantDelta
+	
+	
+	#basically code that handles death
+	if position.distance_to(playerNode.position) <= 50 and playerNode.rage_level >= 2:
+		alive = false
+		died.emit()
+	
 	
 	#animation stuff
 	$AnimatedSprite2D.speed_scale = linear_velocity.length() / 100

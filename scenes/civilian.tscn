@@ -1,13 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://cod1ret36o1nx"]
+[gd_scene load_steps=9 format=3 uid="uid://cod1ret36o1nx"]
 
 [ext_resource type="Script" path="res://scripts/civilian.gd" id="1_het4h"]
+[ext_resource type="Texture2D" uid="uid://dkmyf7pasp57f" path="res://assets/npc/dead npc.png" id="2_4guq0"]
 [ext_resource type="Texture2D" uid="uid://cjf3j7x3twc3i" path="res://assets/npc/npc idle.png" id="2_r0afx"]
 [ext_resource type="Texture2D" uid="uid://2x7mfevux0g6" path="res://assets/npc/npc left foot.png" id="3_x0bad"]
 [ext_resource type="Texture2D" uid="uid://dymwim4wnx5ta" path="res://assets/npc/npc right foot.png" id="4_8y1tt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5xfuh"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4guq0")
+}],
 "loop": true,
 "name": &"dead",
 "speed": 5.0
@@ -46,7 +50,7 @@ script = ExtResource("1_het4h")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_5xfuh")
-animation = &"walk"
+animation = &"dead"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jefqq")
