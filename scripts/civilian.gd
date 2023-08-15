@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const SPEED = 40.0
+const SPEED = 50.0
 
 #possibly confusingly, the higher then number, the slower it turns (maybe i should come up with a better variable name)
 var turn_speed = 1.0
@@ -33,7 +33,7 @@ func _physics_process(delta):
 			linear_velocity -= look_direction.normalized() * (SPEED / 3) * relevantDelta
 		elif $/root/Main/Player.rage_level >= 2:
 			look_direction *= -1
-			linear_velocity += look_direction.normalized() * SPEED * relevantDelta
+			linear_velocity += look_direction.normalized() * (SPEED * 1.3) * relevantDelta
 	
 	#goes to spawn position if criteria are met (not afraid, far enough away)
 	if go_home and position.distance_to(spawn_position) > 20:

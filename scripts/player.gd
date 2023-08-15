@@ -11,7 +11,7 @@ var move_dir = Vector2()
 var rage_dir = Vector2()
 var rage_priority = 0.0
 
-var rage_level = 1.0
+var rage_level = 2.0
 
 func _ready():
 	$AnimatedSprite2D.play()
@@ -44,7 +44,7 @@ func _physics_process(delta):
 		speed = 65.0
 	else:
 		rage_priority = 1.0
-		speed = 100.0
+		speed = 80.0
 	
 	#i transfer the value of direction to a different variable because it soon gets changed
 	move_dir = direction
