@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjq3h1vno8cre"
-path="res://.godot/imported/1.png-d1bd384365b25a91c083ee84be99d008.ctex"
+uid="uid://uecpkeb66g8v"
+path="res://.godot/imported/left foot extend.png-f9d9c385e09e520428a92523e33d5b45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/faces/1.png"
-dest_files=["res://.godot/imported/1.png-d1bd384365b25a91c083ee84be99d008.ctex"]
+source_file="res://assets/guy/left foot extend.png"
+dest_files=["res://.godot/imported/left foot extend.png-f9d9c385e09e520428a92523e33d5b45.ctex"]
 
 [params]
 
