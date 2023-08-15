@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://qglto6ng48d5"]
+[gd_scene load_steps=5 format=3 uid="uid://qglto6ng48d5"]
 
 [ext_resource type="PackedScene" uid="uid://bo2x5fk0khblm" path="res://scenes/player.tscn" id="1_46vnj"]
 [ext_resource type="PackedScene" uid="uid://d00y3w3m0suo4" path="res://scenes/table.tscn" id="2_5qq61"]
 [ext_resource type="PackedScene" uid="uid://cod1ret36o1nx" path="res://scenes/civilian.tscn" id="3_3qbp8"]
+[ext_resource type="PackedScene" uid="uid://dqfag4tkvkwg1" path="res://scenes/ui.tscn" id="4_atlbp"]
 
 [node name="Main" type="Node2D"]
 
@@ -19,3 +20,5 @@ position = Vector2(250, 248)
 
 [node name="Civilian2" parent="." instance=ExtResource("3_3qbp8")]
 position = Vector2(882, -210)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_atlbp")]

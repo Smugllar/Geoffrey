@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqfag4tkvkwg1"]
+
+[ext_resource type="Texture2D" uid="uid://dov61mpw8cwtp" path="res://assets/smokinhotbar.png" id="1_gxn76"]
+[ext_resource type="Texture2D" uid="uid://cm0ma421xwt0k" path="res://assets/2-2.png" id="2_pxr2k"]
+[ext_resource type="Texture2D" uid="uid://blhu13olvjdox" path="res://assets/2-3.png" id="3_noboy"]
+[ext_resource type="Texture2D" uid="uid://ce1jh64vrebfs" path="res://assets/2-4.png" id="4_6lsl6"]
+[ext_resource type="Texture2D" uid="uid://dakouo4hskxqf" path="res://assets/2-5.png" id="5_58k3h"]
+[ext_resource type="Texture2D" uid="uid://bukqtj6f5ylbb" path="res://assets/2-6.png" id="6_jvujm"]
+[ext_resource type="Texture2D" uid="uid://cjq3h1vno8cre" path="res://assets/1.png" id="7_y8ren"]
+[ext_resource type="Texture2D" uid="uid://b347qjpgu225y" path="res://assets/2-1.png" id="8_5fqqu"]
+[ext_resource type="Texture2D" uid="uid://6114vhmth2vs" path="res://assets/rage-meter.png" id="9_d0ple"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2puau"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pxr2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_noboy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6lsl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_58k3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jvujm")
+}],
+"loop": true,
+"name": &"crazy",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_y8ren")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5fqqu")
+}],
+"loop": true,
+"name": &"slight",
+"speed": 5.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="hotbar" type="Sprite2D" parent="."]
+position = Vector2(0, 450)
+texture = ExtResource("1_gxn76")
+centered = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 450)
+sprite_frames = SubResource("SpriteFrames_2puau")
+animation = &"crazy"
+frame = 4
+frame_progress = 1.0
+centered = false
+
+[node name="Rage-meter" type="Sprite2D" parent="."]
+position = Vector2(0, 450)
+texture = ExtResource("9_d0ple")
+centered = false

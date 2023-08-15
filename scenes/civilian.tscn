@@ -39,7 +39,5 @@ shape = SubResource("CircleShape2D_jefqq")
 shape = SubResource("CircleShape2D_dslhb")
 debug_color = Color(0.54902, 0.556863, 0.25098, 0.419608)
 
-[node name="Timer" type="Timer" parent="."]
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

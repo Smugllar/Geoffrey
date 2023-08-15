@@ -24,13 +24,15 @@ linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_5a8yg")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-process_callback = 0
-position_smoothing_enabled = true
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_2md46")
 
 [node name="CollisionShapeCircle" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fiyma")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, 75)
+process_callback = 0
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true

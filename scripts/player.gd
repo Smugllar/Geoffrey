@@ -8,6 +8,8 @@ const SPEED = 50.0
 var turn_speed = 2.0
 
 var move_dir = Vector2()
+var rage_dir = Vector2()
+
 var enrage_level = 0
 
 func _physics_process(delta):
@@ -19,10 +21,10 @@ func _physics_process(delta):
 	move_dir = Vector2.ZERO
 	
 	#gets the direction that the character will be moving soon but in a coordinate sorta way
-	var direction = Vector2.ZERO
+	var direction = Vector2( Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down") )
 	
 	if enrage_level < 1:
-		direction = Vector2( Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down") )
+		pass
 	elif enrage_level < 2:
 		pass
 	else:
