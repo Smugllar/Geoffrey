@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bukqtj6f5ylbb" path="res://assets/ui/faces/2-6.png" id="6_rqogj"]
 [ext_resource type="Texture2D" uid="uid://cjq3h1vno8cre" path="res://assets/ui/faces/1.png" id="7_vsiya"]
 [ext_resource type="Texture2D" uid="uid://b347qjpgu225y" path="res://assets/ui/faces/2-1.png" id="8_qohhx"]
-[ext_resource type="Texture2D" uid="uid://6114vhmth2vs" path="res://assets/ui/rage-meter.png" id="9_ow5gu"]
-[ext_resource type="Texture2D" uid="uid://b6gwqly0hwiqa" path="res://assets/ui/rage meter fill.png" id="11_525fn"]
+[ext_resource type="Texture2D" path="res://assets/ui/rage-meter.png" id="9_ow5gu"]
+[ext_resource type="Texture2D" uid="uid://cxkt1yxillxdk" path="res://assets/ui/rage meter fill.png" id="11_525fn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2puau"]
 animations = [{
@@ -66,6 +66,7 @@ animation = &"normal"
 centered = false
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 max_value = 3.0
