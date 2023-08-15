@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const SPEED = 50.0
+const SPEED = 40.0
 
 #possibly confusingly, the higher then number, the slower it turns (maybe i should come up with a better variable name)
 var turn_speed = 1.0
@@ -13,9 +13,12 @@ var look_direction = Vector2.ZERO
 
 var move_dir = Vector2()
 var scared = false
+var go_home = false
+
+var spawn_position = Vector2()
 
 func _ready():
-	var spawn_position = position
+	spawn_position = position
 
 func _physics_process(delta):
 	#delta but times 60 because _physics_process happesn 60 times a second
@@ -25,11 +28,19 @@ func _physics_process(delta):
 	#makes look_direction basically point towards the player's position relative to the civilian...
 	#that is if observe = true
 	if observe:
-		look_direction = Vector2($/root/Main/Player.position.x - position.x, $/root/Main/Player.position.y - position.y)
+		look_direction = $/root/Main/Player.position - position
 		if $/root/Main/Player.rage_level >= 1 and $/root/Main/Player.rage_level < 2:
-			linear_velocity -= look_direction.normalized() * (SPEED / 2) * relevantDelta
+			linear_velocity -= look_direction.normalized() * (SPEED / 3) * relevantDelta
 		elif $/root/Main/Player.rage_level >= 2:
-			linear_velocity -= look_direction.normalized() * SPEED * relevantDelta
+			look_direction *= -1
+			linear_velocity += look_direction.normalized() * SPEED * relevantDelta
+	
+	#goes to spawn position if criteria are met (not afraid, far enough away)
+	if go_home and position.distance_to(spawn_position) > 20:
+		look_direction = spawn_position - position
+		linear_velocity += look_direction.normalized() * SPEED * relevantDelta
+	elif position.distance_to(spawn_position) <= 20:
+		go_home = false
 	
 	
 	#turn stuff
@@ -43,8 +54,21 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if "player" in body:
 		observe = true
+		if $/root/Main/Player.rage_level >= 1:
+			scared = true
+		
+		if scared:
+			go_home = false
 
 
 func _on_area_2d_body_exited(body):
 	if "player" in body:
 		observe = false
+		$ReturnTimer.start()
+
+
+func _on_return_timer_timeout():
+	if $/root/Main/Player.rage_level < 2:
+		scared = false
+	if not observe:
+		go_home = true
