@@ -45,5 +45,4 @@ func _process(delta):
 
 
 func _on_level_1_pressed():
-	print("do the thing")
 	level_1.emit()

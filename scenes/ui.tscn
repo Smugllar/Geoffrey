@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqfag4tkvkwg1"]
+[gd_scene load_steps=14 format=3 uid="uid://dqfag4tkvkwg1"]
 
 [ext_resource type="Texture2D" uid="uid://dov61mpw8cwtp" path="res://assets/ui/smokinhotbar.png" id="1_1vvmi"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_51slt"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b347qjpgu225y" path="res://assets/ui/faces/2-1.png" id="8_qohhx"]
 [ext_resource type="Texture2D" uid="uid://bjrdjvt7ytpfe" path="res://assets/ui/rage meter.png" id="10_p2yon"]
 [ext_resource type="Texture2D" uid="uid://cxkt1yxillxdk" path="res://assets/ui/rage meter fill.png" id="11_525fn"]
+[ext_resource type="Theme" uid="uid://deifnwmvr372j" path="res://assets/font/theme.tres" id="12_p0pa1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2puau"]
 animations = [{
@@ -86,23 +87,28 @@ alignment = 1
 [node name="Level1" type="Button" parent="LevelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("12_p0pa1")
 text = "Level 1"
 icon_alignment = 1
 
 [node name="Level2" type="Button" parent="LevelContainer"]
 layout_mode = 2
+theme = ExtResource("12_p0pa1")
 text = "Level 2"
 
 [node name="Level3" type="Button" parent="LevelContainer"]
 layout_mode = 2
+theme = ExtResource("12_p0pa1")
 text = "Level 3"
 
 [node name="Level4" type="Button" parent="LevelContainer"]
 layout_mode = 2
+theme = ExtResource("12_p0pa1")
 text = "Level 4"
 
 [node name="Level5" type="Button" parent="LevelContainer"]
 layout_mode = 2
+theme = ExtResource("12_p0pa1")
 text = "Level 5"
 
 [connection signal="pressed" from="LevelContainer/Level1" to="." method="_on_level_1_pressed"]

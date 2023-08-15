@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://deifnwmvr372j"]
+
+[ext_resource type="FontFile" uid="uid://kk1hnjj40w57" path="res://assets/font/Ravie.otf" id="1_v6ux8"]
+
+[resource]
+default_font = ExtResource("1_v6ux8")
