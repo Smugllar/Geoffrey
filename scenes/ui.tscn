@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqfag4tkvkwg1"]
+[gd_scene load_steps=13 format=3 uid="uid://dqfag4tkvkwg1"]
 
 [ext_resource type="Texture2D" uid="uid://dov61mpw8cwtp" path="res://assets/ui/smokinhotbar.png" id="1_1vvmi"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_51slt"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bukqtj6f5ylbb" path="res://assets/ui/faces/2-6.png" id="6_rqogj"]
 [ext_resource type="Texture2D" uid="uid://cjq3h1vno8cre" path="res://assets/ui/faces/1.png" id="7_vsiya"]
 [ext_resource type="Texture2D" uid="uid://b347qjpgu225y" path="res://assets/ui/faces/2-1.png" id="8_qohhx"]
-[ext_resource type="Texture2D" uid="uid://6114vhmth2vs" path="res://assets/ui/rage-meter.png" id="9_ow5gu"]
+[ext_resource type="Texture2D" path="res://assets/ui/rage-meter.png" id="9_ow5gu"]
+[ext_resource type="Texture2D" uid="uid://cxkt1yxillxdk" path="res://assets/ui/rage meter fill.png" id="11_525fn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2puau"]
 animations = [{
@@ -64,7 +65,12 @@ sprite_frames = SubResource("SpriteFrames_2puau")
 animation = &"normal"
 centered = false
 
-[node name="Rage-meter" type="Sprite2D" parent="."]
-position = Vector2(0, 450)
-texture = ExtResource("9_ow5gu")
-centered = false
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 3.0
+step = 0.01
+fill_mode = 3
+texture_over = ExtResource("9_ow5gu")
+texture_progress = ExtResource("11_525fn")
