@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq03d1q1jwstw"]
+[gd_scene load_steps=5 format=3 uid="uid://cq03d1q1jwstw"]
 
 [ext_resource type="Texture2D" uid="uid://c6vivmyl1igwi" path="res://assets/moving parts/big box.png" id="1_j0rnx"]
+[ext_resource type="Script" path="res://scripts/object.gd" id="1_mj01r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jrj1"]
 size = Vector2(80, 138)
@@ -10,6 +11,7 @@ size = Vector2(130, 80)
 
 [node name="Large Box" type="RigidBody2D"]
 mass = 0.3
+script = ExtResource("1_mj01r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-3, 1)
