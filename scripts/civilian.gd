@@ -2,6 +2,8 @@ extends RigidBody2D
 
 const SPEED = 50.0
 
+
+
 var spawn_position = position
 
 #possibly confusingly, the higher then number, the slower it turns (maybe i should come up with a better variable name)
@@ -35,6 +37,8 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if "player" in body:
 		observe = true
+		if body.rage_level >= 1 and body.rage_level < 2:
+			
 
 
 func _on_area_2d_body_exited(body):
