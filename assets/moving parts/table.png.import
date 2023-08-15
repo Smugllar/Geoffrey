@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxkt1yxillxdk"
-path="res://.godot/imported/rage meter fill.png-9db73a22613ace461ce707057d4ee43f.ctex"
+uid="uid://bgv620eovmvla"
+path="res://.godot/imported/table.png-61954f4c43208c72bf06f12b100cd183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/rage meter fill.png"
-dest_files=["res://.godot/imported/rage meter fill.png-9db73a22613ace461ce707057d4ee43f.ctex"]
+source_file="res://assets/moving parts/table.png"
+dest_files=["res://.godot/imported/table.png-61954f4c43208c72bf06f12b100cd183.ctex"]
 
 [params]
 
