@@ -11,7 +11,7 @@ var move_dir = Vector2()
 var rage_dir = Vector2()
 var rage_priority = 0.0
 
-var enrage_level = 1.0
+var rage_level = 0.0
 
 func _physics_process(delta):
 	var civilians = get_tree().get_nodes_in_group("civilians")
@@ -33,10 +33,10 @@ func _physics_process(delta):
 	#gets the direction that the character will be moving soon but in a coordinate sorta way
 	var direction = Vector2( Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down") )
 	
-	if enrage_level < 1:
+	if rage_level < 1:
 		rage_priority = 0.0
 		speed = 50.0
-	elif enrage_level < 2:
+	elif rage_level < 2:
 		rage_priority = randf_range(0.2, 0.4)
 		speed = 65.0
 	else:
