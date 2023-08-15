@@ -11,7 +11,10 @@ var move_dir = Vector2()
 var rage_dir = Vector2()
 var rage_priority = 0.0
 
-var rage_level = 2.0
+#rage_level is what changes how angry you are (shocker)
+var rage_level = 0.0
+var rage_rate = 0.0005
+var rage_status = 0
 
 func _ready():
 	$AnimatedSprite2D.play()
@@ -20,6 +23,15 @@ func _physics_process(delta):
 	var civilians = get_tree().get_nodes_in_group("civilians")
 	#delta but times 60 because _physics_process happesn 60 times a second
 	var relevantDelta = delta * 60.0
+	
+	#deals with the rate at which rage_level rises
+	match rage_status:
+		0:
+			rage_level += rage_rate * relevantDelta
+		1:
+			rage_level += rage_rate * 5 * relevantDelta
+		2:
+			rage_level -= rage_rate * 20 * relevantDelta
 	
 	#for if there is no movemetn!!!
 	move_dir = Vector2.ZERO
@@ -39,12 +51,24 @@ func _physics_process(delta):
 	if rage_level < 1:
 		rage_priority = 0.0
 		speed = 50.0
+		if rage_status != 2:
+			rage_status = 0
 	elif rage_level < 2:
 		rage_priority = randf_range(0.2, 0.4)
 		speed = 65.0
-	else:
+		if rage_status != 2:
+			rage_status = 0
+	elif rage_level < 3:
 		rage_priority = 1.0
 		speed = 80.0
+		if rage_status != 2:
+			rage_status = 1
+	else:
+		rage_status = 2
+	
+	#reset rage once it goes back to normal
+	if rage_level <= 0:
+		rage_status = 0
 	
 	#i transfer the value of direction to a different variable because it soon gets changed
 	move_dir = direction

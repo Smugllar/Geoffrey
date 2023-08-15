@@ -25,16 +25,17 @@ func _physics_process(delta):
 	#delta but times 60 because _physics_process happesn 60 times a second
 	var relevantDelta = delta * 60.0
 	
-	
-	#makes look_direction basically point towards the player's position relative to the civilian...
+	#all the code regarding if the player gets too close
 	#that is if observe = true
 	if observe:
+		$/root/Main/Player.rage_level += $/root/Main/Player.rage_rate * 2 * relevantDelta
 		look_direction = $/root/Main/Player.position - position
 		if $/root/Main/Player.rage_level >= 1 and $/root/Main/Player.rage_level < 2:
 			linear_velocity -= look_direction.normalized() * (SPEED / 3) * relevantDelta
 		elif $/root/Main/Player.rage_level >= 2:
 			look_direction *= -1
 			linear_velocity += look_direction.normalized() * (SPEED * 1.3) * relevantDelta
+	
 	
 	#goes to spawn position if criteria are met (not afraid, far enough away)
 	if go_home and position.distance_to(spawn_position) > 20:

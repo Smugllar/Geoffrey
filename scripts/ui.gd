@@ -11,9 +11,11 @@ func _ready():
 func _process(delta):
 	if in_game:
 		$faces.play()
-	if $/root/Main/Player.rage_level < 1:
-		$faces.animation = "normal"
-	elif $/root/Main/Player.rage_level < 2:
-		$faces.animation = "slight"
-	else:
-		$faces.animation = "crazy"
+		if $/root/Main/Player.rage_level < 1:
+			$faces.animation = "normal"
+		elif $/root/Main/Player.rage_level < 2:
+			$faces.animation = "slight"
+		else:
+			$faces.animation = "crazy"
+		
+		$TextureProgressBar.value = $/root/Main/Player.rage_level
