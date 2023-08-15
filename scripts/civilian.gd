@@ -2,10 +2,6 @@ extends RigidBody2D
 
 const SPEED = 50.0
 
-
-
-var spawn_position = position
-
 #possibly confusingly, the higher then number, the slower it turns (maybe i should come up with a better variable name)
 var turn_speed = 1.0
 
@@ -14,6 +10,12 @@ var observe = false
 
 #vector on where the civilian is looking
 var look_direction = Vector2.ZERO
+
+var move_dir = Vector2()
+var scared = false
+
+func _ready():
+	var spawn_position = position
 
 func _physics_process(delta):
 	#delta but times 60 because _physics_process happesn 60 times a second
@@ -24,9 +26,11 @@ func _physics_process(delta):
 	#that is if observe = true
 	if observe:
 		look_direction = Vector2($/root/Main/Player.position.x - position.x, $/root/Main/Player.position.y - position.y)
+		if $/root/Main/Player.rage_level >= 1 and $/root/Main/Player.rage_level < 2:
+			linear_velocity -= look_direction.normalized() * (SPEED / 4) * relevantDelta
 	
 	
-	#turn towards the direction of movement
+	#turn stuff
 	var angle_diff = 0.0 
 	var rotation_vector = Vector2(cos(rotation), sin(rotation))
 	
@@ -37,8 +41,6 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if "player" in body:
 		observe = true
-		if body.rage_level >= 1 and body.rage_level < 2:
-			
 
 
 func _on_area_2d_body_exited(body):

@@ -11,7 +11,7 @@ var move_dir = Vector2()
 var rage_dir = Vector2()
 var rage_priority = 0.0
 
-var rage_level = 0.0
+var rage_level = 1.0
 
 func _physics_process(delta):
 	var civilians = get_tree().get_nodes_in_group("civilians")
