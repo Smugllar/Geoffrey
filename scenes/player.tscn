@@ -28,7 +28,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fiyma"]
-radius = 46.0
+radius = 43.0
 
 [node name="Player" type="RigidBody2D"]
 position = Vector2(0, 1)
