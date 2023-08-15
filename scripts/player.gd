@@ -11,7 +11,7 @@ var move_dir = Vector2()
 var rage_dir = Vector2()
 var rage_priority = 0.0
 
-var rage_level = 2.0
+var rage_level = 0.0
 
 func _ready():
 	$AnimatedSprite2D.play()
