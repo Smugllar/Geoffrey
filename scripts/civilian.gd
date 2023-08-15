@@ -63,17 +63,20 @@ func _physics_process(delta):
 	
 	
 	#basically code that handles death
-	if position.distance_to(playerNode.position) <= 50 and playerNode.rage_level >= 2:
+	if position.distance_to(playerNode.position) <= 80 and playerNode.rage_level >= 2:
 		alive = false
 		died.emit()
 	
 	
 	#animation stuff
 	$AnimatedSprite2D.speed_scale = linear_velocity.length() / 100
-	if linear_velocity.length() < 0.5:
-		$AnimatedSprite2D.animation = "idle"
+	if alive:
+		if linear_velocity.length() < 0.5:
+			$AnimatedSprite2D.animation = "idle"
+		else:
+			$AnimatedSprite2D.animation = "walk"
 	else:
-		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.animation = "dead"
 
 #these two functions actually do the toggling of the 'observe' variable
 func _on_area_2d_body_entered(body):
