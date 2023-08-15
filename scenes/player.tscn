@@ -1,21 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo2x5fk0khblm"]
+[gd_scene load_steps=7 format=3 uid="uid://bo2x5fk0khblm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5a8yg"]
-[ext_resource type="Texture2D" uid="uid://b5afwit7kx1c" path="res://assets/icon.svg" id="1_7yjij"]
+[ext_resource type="Texture2D" uid="uid://bbjahy4iy3ovs" path="res://assets/idle.png" id="2_mq5pk"]
+[ext_resource type="Texture2D" uid="uid://uecpkeb66g8v" path="res://assets/left foot extend.png" id="3_hv7n3"]
+[ext_resource type="Texture2D" uid="uid://d3ofdd50ahq1f" path="res://assets/right foot extend.png" id="4_e2xxk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2md46"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7yjij")
+"texture": ExtResource("2_mq5pk")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hv7n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e2xxk")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fiyma"]
-radius = 59.0
+radius = 46.0
 
 [node name="Player" type="RigidBody2D"]
 position = Vector2(0, 1)
@@ -27,6 +40,8 @@ script = ExtResource("1_5a8yg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_2md46")
+animation = &"walk"
+frame_progress = 0.83487
 
 [node name="CollisionShapeCircle" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fiyma")

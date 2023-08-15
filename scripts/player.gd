@@ -11,7 +11,10 @@ var move_dir = Vector2()
 var rage_dir = Vector2()
 var rage_priority = 0.0
 
-var rage_level = 1.0
+var rage_level = 0.0
+
+func _ready():
+	$AnimatedSprite2D.play()
 
 func _physics_process(delta):
 	var civilians = get_tree().get_nodes_in_group("civilians")
@@ -57,3 +60,10 @@ func _physics_process(delta):
 		angle_diff = rotation_vector.angle_to(linear_velocity)
 	
 	angular_velocity += angle_diff / turn_speed * relevantDelta
+	
+	#animations
+	$AnimatedSprite2D.speed_scale = linear_velocity.length() / 100
+	if linear_velocity.length() < 0.5:
+		$AnimatedSprite2D.animation = "idle"
+	else:
+		$AnimatedSprite2D.animation = "walk"
