@@ -58,7 +58,7 @@ position = Vector2(0, 450)
 texture = ExtResource("1_1vvmi")
 centered = false
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="faces" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 450)
 sprite_frames = SubResource("SpriteFrames_2puau")
 animation = &"normal"
