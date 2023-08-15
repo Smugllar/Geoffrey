@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6114vhmth2vs"
-path="res://.godot/imported/rage-meter.png-1e9040903b9b83d9bcc97cb3e64c49d2.ctex"
+uid="uid://bgpykripw1n3k"
+path="res://.godot/imported/background.png-d4a6670b9e3e1423c32f6a27a0ebde8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/rage-meter.png"
-dest_files=["res://.godot/imported/rage-meter.png-1e9040903b9b83d9bcc97cb3e64c49d2.ctex"]
+source_file="res://assets/level one/background.png"
+dest_files=["res://.godot/imported/background.png-d4a6670b9e3e1423c32f6a27a0ebde8e.ctex"]
 
 [params]
 
