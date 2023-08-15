@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://d00y3w3m0suo4"]
 
-[ext_resource type="Texture2D" uid="uid://b3pxosu8x4pnl" path="res://assets/throw against a wall.jpg" id="1_q2j8r"]
+[ext_resource type="Texture2D" uid="uid://bgv620eovmvla" path="res://assets/moving parts/table.png" id="1_dyaal"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_paxvn"]
-size = Vector2(372, 152)
+size = Vector2(420, 102)
 
 [node name="Table" type="RigidBody2D"]
 mass = 3.0
@@ -13,8 +13,8 @@ angular_velocity = 6.98132
 angular_damp = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.31, 0.126667)
-texture = ExtResource("1_q2j8r")
+rotation = 1.5708
+texture = ExtResource("1_dyaal")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_paxvn")

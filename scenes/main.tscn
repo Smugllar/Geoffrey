@@ -1,24 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://qglto6ng48d5"]
+[gd_scene load_steps=3 format=3 uid="uid://qglto6ng48d5"]
 
-[ext_resource type="PackedScene" uid="uid://bo2x5fk0khblm" path="res://scenes/player.tscn" id="1_46vnj"]
-[ext_resource type="PackedScene" uid="uid://d00y3w3m0suo4" path="res://scenes/table.tscn" id="2_5qq61"]
-[ext_resource type="PackedScene" uid="uid://cod1ret36o1nx" path="res://scenes/civilian.tscn" id="3_3qbp8"]
+[ext_resource type="PackedScene" uid="uid://6fqvnf2joriq" path="res://scenes/level_1.tscn" id="2_s2lpl"]
 [ext_resource type="PackedScene" uid="uid://dqfag4tkvkwg1" path="res://scenes/ui.tscn" id="4_atlbp"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Table" parent="." instance=ExtResource("2_5qq61")]
-position = Vector2(778, 285)
-rotation = -0.6353
-angular_velocity = 0.0
-
-[node name="Player" parent="." instance=ExtResource("1_46vnj")]
-position = Vector2(352, -90)
-
-[node name="Civilian" parent="." instance=ExtResource("3_3qbp8")]
-position = Vector2(160, 277)
-
-[node name="Civilian2" parent="." instance=ExtResource("3_3qbp8")]
-position = Vector2(744, 33)
-
 [node name="CanvasLayer" parent="." instance=ExtResource("4_atlbp")]
+
+[node name="Level 1" parent="." instance=ExtResource("2_s2lpl")]
