@@ -27,7 +27,9 @@ func _physics_process(delta):
 	if observe:
 		look_direction = Vector2($/root/Main/Player.position.x - position.x, $/root/Main/Player.position.y - position.y)
 		if $/root/Main/Player.rage_level >= 1 and $/root/Main/Player.rage_level < 2:
-			linear_velocity -= look_direction.normalized() * (SPEED / 4) * relevantDelta
+			linear_velocity -= look_direction.normalized() * (SPEED / 2) * relevantDelta
+		elif $/root/Main/Player.rage_level >= 2:
+			linear_velocity -= look_direction.normalized() * SPEED * relevantDelta
 	
 	
 	#turn stuff
