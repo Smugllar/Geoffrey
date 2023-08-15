@@ -8,9 +8,10 @@ const SPEED = 50.0
 var turn_speed = 2.0
 
 var move_dir = Vector2()
-
+var enrage_level = 0
 
 func _physics_process(delta):
+	var civilians = get_tree().get_nodes_in_group("civilians")
 	#delta but times 60 because _physics_process happesn 60 times a second
 	var relevantDelta = delta * 60.0
 	
@@ -18,7 +19,20 @@ func _physics_process(delta):
 	move_dir = Vector2.ZERO
 	
 	#gets the direction that the character will be moving soon but in a coordinate sorta way
-	var direction = Vector2( Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down") )
+	var direction = Vector2.ZERO
+	
+	if enrage_level < 1:
+		direction = Vector2( Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down") )
+	elif enrage_level < 2:
+		pass
+	else:
+		pass
+	var nearest_civilian = civilians[0]
+	for civilian in civilians:
+		#finds which civilian is closest to the player
+		if civilian.position.distance_to(position) < nearest_civilian.position.distance_to(position):
+			nearest_civilian = civilian
+	print(nearest_civilian)
 	
 	#i transfer the value of direction to a different variable because it soon gets changed
 	move_dir = direction
