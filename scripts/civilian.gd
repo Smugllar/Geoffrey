@@ -17,22 +17,28 @@ var go_home = false
 
 var spawn_position = Vector2()
 
+var playerNode = String()
+
 func _ready():
+	playerNode = get_tree().get_nodes_in_group("player")[0]
 	spawn_position = position
 	$AnimatedSprite2D.play()
 
 func _physics_process(delta):
+	if playerNode == null:
+		print('yeah its null')
+		playerNode = get_tree().get_nodes_in_group("player")[0]
 	#delta but times 60 because _physics_process happesn 60 times a second
 	var relevantDelta = delta * 60.0
 	
 	#all the code regarding if the player gets too close
 	#that is if observe = true
 	if observe:
-		$/root/Main/Player.rage_level += $/root/Main/Player.rage_rate * 2 * relevantDelta
-		look_direction = $/root/Main/Player.position - position
-		if $/root/Main/Player.rage_level >= 1 and $/root/Main/Player.rage_level < 2:
+		playerNode.rage_level += playerNode.rage_rate * 2 * relevantDelta
+		look_direction = playerNode.position - position
+		if playerNode.rage_level >= 1 and playerNode.rage_level < 2:
 			linear_velocity -= look_direction.normalized() * (SPEED / 3) * relevantDelta
-		elif $/root/Main/Player.rage_level >= 2:
+		elif playerNode.rage_level >= 2:
 			look_direction *= -1
 			linear_velocity += look_direction.normalized() * (SPEED * 1.3) * relevantDelta
 	
@@ -63,7 +69,7 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if "player" in body:
 		observe = true
-		if $/root/Main/Player.rage_level >= 1:
+		if playerNode.rage_level >= 1:
 			scared = true
 		
 		if scared:
@@ -77,7 +83,7 @@ func _on_area_2d_body_exited(body):
 
 
 func _on_return_timer_timeout():
-	if $/root/Main/Player.rage_level < 2:
+	if playerNode.rage_level < 2:
 		scared = false
 	if not observe:
 		go_home = true

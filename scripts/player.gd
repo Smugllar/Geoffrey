@@ -37,13 +37,14 @@ func _physics_process(delta):
 	move_dir = Vector2.ZERO
 	
 	#deals with the vectors of facing at the nearest civilian
-	var nearest_civilian = civilians[0]
-	for civilian in civilians:
-		#finds which civilian is closest to the player
-		if civilian.position.distance_to(position) < nearest_civilian.position.distance_to(position):
-			nearest_civilian = civilian
-	rage_dir = nearest_civilian.position - position
-	rage_dir = rage_dir.normalized()
+	if len(civilians) > 0:
+		var nearest_civilian = civilians[0]
+		for civilian in civilians:
+			#finds which civilian is closest to the player
+			if civilian.position.distance_to(position) < nearest_civilian.position.distance_to(position):
+				nearest_civilian = civilian
+		rage_dir = nearest_civilian.position - position
+		rage_dir = rage_dir.normalized()
 	
 	#gets the direction that the character will be moving soon but in a coordinate sorta way
 	var direction = Vector2( Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down") )
