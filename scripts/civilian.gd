@@ -36,22 +36,23 @@ func _physics_process(delta):
 	
 	#all the code regarding if the player gets too close
 	#that is if observe = true
-	if observe:
-		playerNode.rage_level += playerNode.rage_rate * 2 * relevantDelta
-		look_direction = playerNode.position - position
-		if playerNode.rage_level >= 1 and playerNode.rage_level < 2:
-			linear_velocity -= look_direction.normalized() * (SPEED / 3) * relevantDelta
-		elif playerNode.rage_level >= 2:
-			look_direction *= -1
-			linear_velocity += look_direction.normalized() * (SPEED * 1.3) * relevantDelta
-	
-	
-	#goes to spawn position if criteria are met (not afraid, far enough away)
-	if go_home and position.distance_to(spawn_position) > 20:
-		look_direction = spawn_position - position
-		linear_velocity += look_direction.normalized() * SPEED * relevantDelta
-	elif position.distance_to(spawn_position) <= 20:
-		go_home = false
+	if alive:
+		if observe:
+			playerNode.rage_level += playerNode.rage_rate * 2 * relevantDelta
+			look_direction = playerNode.position - position
+			if playerNode.rage_level >= 1 and playerNode.rage_level < 2:
+				linear_velocity -= look_direction.normalized() * (SPEED / 3) * relevantDelta
+			elif playerNode.rage_level >= 2:
+				look_direction *= -1
+				linear_velocity += look_direction.normalized() * (SPEED * 1.3) * relevantDelta
+		
+		
+		#goes to spawn position if criteria are met (not afraid, far enough away)
+		if go_home and position.distance_to(spawn_position) > 20:
+			look_direction = spawn_position - position
+			linear_velocity += look_direction.normalized() * SPEED * relevantDelta
+		elif position.distance_to(spawn_position) <= 20:
+			go_home = false
 	
 	
 	#turn stuff
@@ -65,6 +66,7 @@ func _physics_process(delta):
 	#basically code that handles death
 	if position.distance_to(playerNode.position) <= 80 and playerNode.rage_level >= 2:
 		alive = false
+		$hitbox.disabled = true
 		died.emit()
 	
 	
