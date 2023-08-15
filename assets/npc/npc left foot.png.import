@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6114vhmth2vs"
-path="res://.godot/imported/rage-meter.png-1e9040903b9b83d9bcc97cb3e64c49d2.ctex"
+uid="uid://2x7mfevux0g6"
+path="res://.godot/imported/npc left foot.png-162e54fa15df3ef8fe381847f50dc57e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/rage-meter.png"
-dest_files=["res://.godot/imported/rage-meter.png-1e9040903b9b83d9bcc97cb3e64c49d2.ctex"]
+source_file="res://assets/npc/npc left foot.png"
+dest_files=["res://.godot/imported/npc left foot.png-162e54fa15df3ef8fe381847f50dc57e.ctex"]
 
 [params]
 

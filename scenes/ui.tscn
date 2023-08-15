@@ -1,32 +1,32 @@
 [gd_scene load_steps=11 format=3 uid="uid://dqfag4tkvkwg1"]
 
-[ext_resource type="Texture2D" uid="uid://dov61mpw8cwtp" path="res://assets/smokinhotbar.png" id="1_gxn76"]
-[ext_resource type="Texture2D" uid="uid://cm0ma421xwt0k" path="res://assets/2-2.png" id="2_pxr2k"]
-[ext_resource type="Texture2D" uid="uid://blhu13olvjdox" path="res://assets/2-3.png" id="3_noboy"]
-[ext_resource type="Texture2D" uid="uid://ce1jh64vrebfs" path="res://assets/2-4.png" id="4_6lsl6"]
-[ext_resource type="Texture2D" uid="uid://dakouo4hskxqf" path="res://assets/2-5.png" id="5_58k3h"]
-[ext_resource type="Texture2D" uid="uid://bukqtj6f5ylbb" path="res://assets/2-6.png" id="6_jvujm"]
-[ext_resource type="Texture2D" uid="uid://cjq3h1vno8cre" path="res://assets/1.png" id="7_y8ren"]
-[ext_resource type="Texture2D" uid="uid://b347qjpgu225y" path="res://assets/2-1.png" id="8_5fqqu"]
-[ext_resource type="Texture2D" uid="uid://6114vhmth2vs" path="res://assets/rage-meter.png" id="9_d0ple"]
+[ext_resource type="Texture2D" uid="uid://dov61mpw8cwtp" path="res://assets/ui/smokinhotbar.png" id="1_1vvmi"]
+[ext_resource type="Texture2D" uid="uid://cm0ma421xwt0k" path="res://assets/ui/faces/2-2.png" id="2_g7s62"]
+[ext_resource type="Texture2D" uid="uid://blhu13olvjdox" path="res://assets/ui/faces/2-3.png" id="3_g6j21"]
+[ext_resource type="Texture2D" uid="uid://ce1jh64vrebfs" path="res://assets/ui/faces/2-4.png" id="4_i1yll"]
+[ext_resource type="Texture2D" uid="uid://dakouo4hskxqf" path="res://assets/ui/faces/2-5.png" id="5_7lecx"]
+[ext_resource type="Texture2D" uid="uid://bukqtj6f5ylbb" path="res://assets/ui/faces/2-6.png" id="6_rqogj"]
+[ext_resource type="Texture2D" uid="uid://cjq3h1vno8cre" path="res://assets/ui/faces/1.png" id="7_vsiya"]
+[ext_resource type="Texture2D" uid="uid://b347qjpgu225y" path="res://assets/ui/faces/2-1.png" id="8_qohhx"]
+[ext_resource type="Texture2D" uid="uid://6114vhmth2vs" path="res://assets/ui/rage-meter.png" id="9_ow5gu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2puau"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pxr2k")
+"texture": ExtResource("2_g7s62")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_noboy")
+"texture": ExtResource("3_g6j21")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_6lsl6")
+"texture": ExtResource("4_i1yll")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_58k3h")
+"texture": ExtResource("5_7lecx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_jvujm")
+"texture": ExtResource("6_rqogj")
 }],
 "loop": true,
 "name": &"crazy",
@@ -34,7 +34,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_y8ren")
+"texture": ExtResource("7_vsiya")
 }],
 "loop": true,
 "name": &"normal",
@@ -42,7 +42,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_5fqqu")
+"texture": ExtResource("8_qohhx")
 }],
 "loop": true,
 "name": &"slight",
@@ -53,18 +53,17 @@ animations = [{
 
 [node name="hotbar" type="Sprite2D" parent="."]
 position = Vector2(0, 450)
-texture = ExtResource("1_gxn76")
+texture = ExtResource("1_1vvmi")
 centered = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 450)
 sprite_frames = SubResource("SpriteFrames_2puau")
 animation = &"crazy"
-frame = 4
-frame_progress = 1.0
+frame_progress = 0.690011
 centered = false
 
 [node name="Rage-meter" type="Sprite2D" parent="."]
 position = Vector2(0, 450)
-texture = ExtResource("9_d0ple")
+texture = ExtResource("9_ow5gu")
 centered = false

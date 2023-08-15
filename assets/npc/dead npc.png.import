@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6114vhmth2vs"
-path="res://.godot/imported/rage-meter.png-1e9040903b9b83d9bcc97cb3e64c49d2.ctex"
+uid="uid://dkmyf7pasp57f"
+path="res://.godot/imported/dead npc.png-85d2566fba2de77d4306867de120debb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/rage-meter.png"
-dest_files=["res://.godot/imported/rage-meter.png-1e9040903b9b83d9bcc97cb3e64c49d2.ctex"]
+source_file="res://assets/npc/dead npc.png"
+dest_files=["res://.godot/imported/dead npc.png-85d2566fba2de77d4306867de120debb.ctex"]
 
 [params]
 

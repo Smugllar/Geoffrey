@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6114vhmth2vs"
-path="res://.godot/imported/rage-meter.png-1e9040903b9b83d9bcc97cb3e64c49d2.ctex"
+uid="uid://cjf3j7x3twc3i"
+path="res://.godot/imported/npc idle.png-4cb65607cf23e1035ef1bdd80bc13f90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/rage-meter.png"
-dest_files=["res://.godot/imported/rage-meter.png-1e9040903b9b83d9bcc97cb3e64c49d2.ctex"]
+source_file="res://assets/npc/npc idle.png"
+dest_files=["res://.godot/imported/npc idle.png-4cb65607cf23e1035ef1bdd80bc13f90.ctex"]
 
 [params]
 
