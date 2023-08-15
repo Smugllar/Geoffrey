@@ -26,8 +26,13 @@ func _physics_process(delta):
 	elif enrage_level < 2:
 		pass
 	else:
-		for civilian in civilians:
-			print(civilian)
+		pass
+	var nearest_civilian = civilians[0]
+	for civilian in civilians:
+		#finds which civilian is closest to the player
+		if civilian.position.distance_to(position) < nearest_civilian.position.distance_to(position):
+			nearest_civilian = civilian
+	print(nearest_civilian)
 	
 	#i transfer the value of direction to a different variable because it soon gets changed
 	move_dir = direction
