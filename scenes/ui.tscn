@@ -65,7 +65,7 @@ sprite_frames = SubResource("SpriteFrames_2puau")
 animation = &"normal"
 centered = false
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="RageMeter" type="TextureProgressBar" parent="."]
 offset_left = 253.0
 offset_top = 496.0
 offset_right = 293.0
@@ -76,3 +76,33 @@ value = 2.0
 fill_mode = 3
 texture_over = ExtResource("10_p2yon")
 texture_progress = ExtResource("11_525fn")
+
+[node name="LevelContainer" type="HBoxContainer" parent="."]
+offset_top = 300.0
+offset_right = 800.0
+offset_bottom = 364.0
+alignment = 1
+
+[node name="Level1" type="Button" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Level 1"
+icon_alignment = 1
+
+[node name="Level2" type="Button" parent="LevelContainer"]
+layout_mode = 2
+text = "Level 2"
+
+[node name="Level3" type="Button" parent="LevelContainer"]
+layout_mode = 2
+text = "Level 3"
+
+[node name="Level4" type="Button" parent="LevelContainer"]
+layout_mode = 2
+text = "Level 4"
+
+[node name="Level5" type="Button" parent="LevelContainer"]
+layout_mode = 2
+text = "Level 5"
+
+[connection signal="pressed" from="LevelContainer/Level1" to="." method="_on_level_1_pressed"]

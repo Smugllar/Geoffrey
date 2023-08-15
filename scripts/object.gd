@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+signal destroyed()
 
 #makes the health scale with how hard it is to push around
 var health = mass * 100
@@ -22,4 +23,5 @@ func _physics_process(delta):
 			health -= 1
 	
 	if health <= 0:
+		destroyed.emit()
 		queue_free()
