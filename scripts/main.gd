@@ -23,3 +23,10 @@ func level_1():
 
 func died():
 	$Death.play()
+	await get_tree().create_timer(2.0).timeout
+	$Fail.play()
+	get_tree().call_group("main", "reset")
+
+func reset():
+	await get_tree().create_timer(3.0).timeout
+	$MenuMusic.play()

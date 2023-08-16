@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://qglto6ng48d5"]
+[gd_scene load_steps=7 format=3 uid="uid://qglto6ng48d5"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uphsl"]
 [ext_resource type="PackedScene" uid="uid://6fqvnf2joriq" path="res://scenes/level_1.tscn" id="2_s2lpl"]
 [ext_resource type="PackedScene" uid="uid://dqfag4tkvkwg1" path="res://scenes/ui.tscn" id="4_atlbp"]
 [ext_resource type="AudioStream" uid="uid://blkawhmy41465" path="res://assets/audio/menu theme.mp3" id="4_pxpps"]
 [ext_resource type="AudioStream" uid="uid://c4dvpw6p6jfus" path="res://assets/audio/wiggle.mp3" id="5_m1srd"]
+[ext_resource type="AudioStream" uid="uid://cvewirrxvuv2q" path="res://assets/audio/fail.wav" id="6_qb4em"]
 
 [node name="Main" type="Node" groups=["main"]]
 script = ExtResource("1_uphsl")
@@ -17,5 +18,8 @@ stream = ExtResource("4_pxpps")
 
 [node name="Death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_m1srd")
+
+[node name="Fail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qb4em")
 
 [connection signal="level_1" from="CanvasLayer" to="." method="level_1"]

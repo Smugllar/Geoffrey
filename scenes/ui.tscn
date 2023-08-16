@@ -54,7 +54,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CanvasLayer" type="CanvasLayer" groups=["hud"]]
+[node name="CanvasLayer" type="CanvasLayer" groups=["hud", "main"]]
 script = ExtResource("1_51slt")
 
 [node name="guy" type="Sprite2D" parent="."]

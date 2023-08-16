@@ -25,12 +25,14 @@ func _ready():
 func _process(delta):
 	#showing and hiding the ui
 	if in_game:
+		$guy.hide()
 		$Geoffrey.hide()
 		$LevelContainer.hide()
 		$faces.show()
 		$hotbar.show()
 		$RageMeter.show()
 	else:
+		$guy.show()
 		$Geoffrey.show()
 		$LevelContainer.show()
 		$faces.hide()
@@ -59,7 +61,6 @@ func _on_level_1_pressed():
 	$Message.show()
 	$Message.text = "LEVEL 1"
 	$Message/MessageTimer.start()
-	$guy.hide()
 
 
 func _on_message_timer_timeout():
@@ -70,3 +71,10 @@ func _on_position_timer_timeout():
 	$guy.position = Vector2(randi_range(100, 700), randi_range(100, 300))
 	$guy.rotation = randi_range(0, 2 * PI)
 	move_dir = Vector2(randi_range(-50, 50), randi_range(-50, 50))
+
+func reset():
+	$Message.show()
+	$Message.text = "YOU SUCK!!"
+	$Message/MessageTimer.start()
+	await get_tree().create_timer(3.0).timeout
+	in_game = false

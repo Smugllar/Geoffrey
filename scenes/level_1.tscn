@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://6fqvnf2joriq"]
+[gd_scene load_steps=17 format=3 uid="uid://6fqvnf2joriq"]
 
 [ext_resource type="Texture2D" uid="uid://bgpykripw1n3k" path="res://assets/level one/background.png" id="1_08udh"]
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_y3l15"]
 [ext_resource type="Texture2D" uid="uid://ck3gno4wx6b15" path="res://assets/level one/walls.png" id="2_se2a5"]
 [ext_resource type="PackedScene" uid="uid://bo2x5fk0khblm" path="res://scenes/player.tscn" id="3_80gs7"]
 [ext_resource type="PackedScene" uid="uid://d00y3w3m0suo4" path="res://scenes/table.tscn" id="4_be735"]
@@ -30,7 +31,8 @@ size = Vector2(1209.5, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir7wh"]
 size = Vector2(23.25, 940)
 
-[node name="Level 1" type="Node2D"]
+[node name="Level 1" type="Node2D" groups=["main"]]
+script = ExtResource("1_y3l15")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_08udh")
