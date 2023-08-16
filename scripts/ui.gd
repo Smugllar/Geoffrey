@@ -10,7 +10,7 @@ var in_game = false
 
 var playerNode = String()
 
-var move_dir = Vector2.ZERO
+var move_dir = Vector2(randi_range(-50, 50), randi_range(-50, 50))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,7 +49,7 @@ func _process(delta):
 				
 				$RageMeter.value = playerNode.rage_level
 	else:
-		$guy.position += (move_dir - $guy.position).normalized() / 4
+		$guy.position += move_dir.normalized() / 4
 
 
 func _on_level_1_pressed():
@@ -57,6 +57,7 @@ func _on_level_1_pressed():
 	$Message.show()
 	$Message.text = "LEVEL 1"
 	$Message/MessageTimer.start()
+	$guy.hide()
 
 
 func _on_message_timer_timeout():
