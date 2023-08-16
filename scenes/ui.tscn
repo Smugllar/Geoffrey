@@ -180,6 +180,49 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="How2Play" type="CheckButton" parent="."]
+offset_left = 612.0
+offset_top = 554.0
+offset_right = 783.0
+offset_bottom = 584.0
+theme = ExtResource("12_p0pa1")
+text = "How 2 pLAy"
+
+[node name="ColorRect" type="ColorRect" parent="How2Play"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -514.5
+offset_top = -308.0
+offset_right = -74.5
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="How2Play/ColorRect"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -1.0
+offset_right = 420.0
+offset_bottom = 224.0
+theme = ExtResource("12_p0pa1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "so basically like you move around and
+stuff with wasd and arrow keys and
+you hold objects with space and you
+take your meds with Z or E (if you
+have them) also you want to bring
+the objectives to a place in the level
+that would make sense and then once
+you do all that you can leave and then 
+you win"
+
 [connection signal="timeout" from="guy/PositionTimer" to="." method="_on_position_timer_timeout"]
 [connection signal="pressed" from="LevelContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="timeout" from="Message/MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="toggled" from="How2Play" to="." method="_on_check_button_toggled"]
