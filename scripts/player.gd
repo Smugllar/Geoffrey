@@ -94,8 +94,6 @@ func _physics_process(delta):
 			var grab_distance = 80
 			var grab_spot = position + Vector2(cos(rotation) * grab_distance, sin(rotation) * grab_distance)
 			var move_vect = grab_spot - object.position
-			var obj_distance = grab_spot.distance_to(object.position)
-			print(grab_spot, object.position, obj_distance)
 			object.linear_velocity += move_vect
 	
 	
@@ -113,5 +111,5 @@ func _on_grab_area_body_entered(body):
 	object = body
 
 
-func _on_grab_area_body_exited(body):
+func _on_grab_area_body_exited(_body):
 	grabbable = false

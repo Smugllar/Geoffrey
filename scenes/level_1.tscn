@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://6fqvnf2joriq"]
+[gd_scene load_steps=20 format=3 uid="uid://6fqvnf2joriq"]
 
 [ext_resource type="Texture2D" uid="uid://bgpykripw1n3k" path="res://assets/level one/background.png" id="1_08udh"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_y3l15"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ffvcdyt0uath" path="res://scenes/small_box.tscn" id="7_h5jmr"]
 [ext_resource type="PackedScene" uid="uid://cq03d1q1jwstw" path="res://scenes/large_box.tscn" id="8_qidju"]
 [ext_resource type="PackedScene" uid="uid://bw8amc1qpqblu" path="res://scenes/frying_pan.tscn" id="10_s4ctu"]
+[ext_resource type="Texture2D" uid="uid://be3bjxkxabqg2" path="res://assets/objectives/frying pan.png" id="11_kjdqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qd46"]
 size = Vector2(338.5, 13)
@@ -31,6 +32,9 @@ size = Vector2(1209.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir7wh"]
 size = Vector2(23.25, 940)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f75ij"]
+size = Vector2(93, 235)
 
 [node name="Level 1" type="Node2D" groups=["main"]]
 script = ExtResource("1_y3l15")
@@ -122,3 +126,20 @@ position = Vector2(991, 523)
 
 [node name="Frying Pan" parent="." instance=ExtResource("10_s4ctu")]
 position = Vector2(1129, 496)
+
+[node name="Kitchen" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen"]
+position = Vector2(222.5, 628.5)
+shape = SubResource("RectangleShape2D_f75ij")
+debug_color = Color(0.352941, 0.603922, 0.372549, 0.419608)
+
+[node name="PanPosition" type="Marker2D" parent="Kitchen"]
+position = Vector2(228, 590)
+
+[node name="Sprite2D" type="Sprite2D" parent="Kitchen/PanPosition"]
+texture = ExtResource("11_kjdqm")
+
+[connection signal="body_entered" from="Kitchen" to="." method="_on_kitchen_body_entered"]

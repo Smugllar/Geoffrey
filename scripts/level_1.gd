@@ -1,15 +1,16 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Kitchen/PanPosition/Sprite2D.hide()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
 
 func reset():
 	await get_tree().create_timer(3.0).timeout
 	queue_free()
+
+
+func _on_kitchen_body_entered(body):
+	#if pan enters kitchen
+	if body == get_tree().get_nodes_in_group("pan")[0]:
+		get_tree().call_group("pan", "bruh")
+		$Kitchen/PanPosition/Sprite2D.show()

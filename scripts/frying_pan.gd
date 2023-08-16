@@ -18,3 +18,6 @@ func _physics_process(delta):
 	#makes the pan always try to be upright
 	rotation_diff = 0 - rotation
 	angular_velocity += (rotation_diff / rotation_speed) * relevantDelta
+
+func bruh():
+	queue_free()

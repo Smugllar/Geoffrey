@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ivbo"]
 radius = 30.1496
 
-[node name="Frying Pan" type="RigidBody2D"]
+[node name="Frying Pan" type="RigidBody2D" groups=["objective", "pan"]]
 collision_layer = 3
 collision_mask = 3
 mass = 0.2
