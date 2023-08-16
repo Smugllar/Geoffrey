@@ -12,7 +12,7 @@ var playerNode = String()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	$Message.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,6 +46,9 @@ func _process(delta):
 
 func _on_level_1_pressed():
 	level_1.emit()
+	$Message.show()
+	$Message.text = "LEVEL 1"
+	$Message/MessageTimer.start()
 
 
 func _on_message_timer_timeout():
