@@ -65,9 +65,12 @@ func _physics_process(delta):
 	
 	#basically code that handles death
 	if position.distance_to(playerNode.position) <= 80 and playerNode.rage_level >= 2:
+		if alive:
+			$/root/Main/Death.play()
 		alive = false
 		$hitbox.disabled = true
 		died.emit()
+
 	
 	
 	#animation stuff

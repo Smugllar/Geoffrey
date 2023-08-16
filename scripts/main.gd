@@ -20,3 +20,6 @@ func level_1():
 	add_child(Level1.instantiate())
 	$CanvasLayer.in_game = true
 	$MenuMusic.stop()
+
+func died():
+	$Death.play()
