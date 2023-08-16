@@ -50,7 +50,7 @@ script = ExtResource("1_het4h")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_5xfuh")
-animation = &"dead"
+animation = &"idle"
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jefqq")

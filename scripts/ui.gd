@@ -46,3 +46,7 @@ func _process(delta):
 
 func _on_level_1_pressed():
 	level_1.emit()
+
+
+func _on_message_timer_timeout():
+	$Message.hide()
