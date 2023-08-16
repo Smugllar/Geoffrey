@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dqfag4tkvkwg1"]
+[gd_scene load_steps=15 format=3 uid="uid://dqfag4tkvkwg1"]
 
 [ext_resource type="Texture2D" uid="uid://dov61mpw8cwtp" path="res://assets/ui/smokinhotbar.png" id="1_1vvmi"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_51slt"]
+[ext_resource type="Texture2D" uid="uid://d0femrsocguoe" path="res://assets/player/guy upscaled.png" id="2_7dwou"]
 [ext_resource type="Texture2D" uid="uid://cm0ma421xwt0k" path="res://assets/ui/faces/2-2.png" id="2_g7s62"]
 [ext_resource type="Texture2D" uid="uid://blhu13olvjdox" path="res://assets/ui/faces/2-3.png" id="3_g6j21"]
 [ext_resource type="Texture2D" uid="uid://ce1jh64vrebfs" path="res://assets/ui/faces/2-4.png" id="4_i1yll"]
@@ -54,6 +55,14 @@ animations = [{
 
 [node name="CanvasLayer" type="CanvasLayer" groups=["hud"]]
 script = ExtResource("1_51slt")
+
+[node name="guy" type="Sprite2D" parent="."]
+position = Vector2(400, 200)
+scale = Vector2(3, 3)
+texture = ExtResource("2_7dwou")
+
+[node name="PositionTimer" type="Timer" parent="guy"]
+wait_time = 5.0
 
 [node name="hotbar" type="Sprite2D" parent="."]
 position = Vector2(0, 450)
@@ -134,5 +143,6 @@ vertical_alignment = 1
 wait_time = 3.0
 one_shot = true
 
+[connection signal="timeout" from="guy/PositionTimer" to="." method="_on_position_timer_timeout"]
 [connection signal="pressed" from="LevelContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="timeout" from="Message/MessageTimer" to="." method="_on_message_timer_timeout"]

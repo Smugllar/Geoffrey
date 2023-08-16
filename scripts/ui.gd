@@ -10,9 +10,15 @@ var in_game = false
 
 var playerNode = String()
 
+var move_dir = Vector2.ZERO
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$guy.position = Vector2(randi_range(-300, 300), randi_range(-100, 100))
+	$guy.rotation = randi_range(0, 2 * PI)
 	$Message.hide()
+	$guy/PositionTimer.start()
+	$guy/PositionTimer.set_wait_time(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,6 +48,8 @@ func _process(delta):
 					$faces.animation = "crazy"
 				
 				$RageMeter.value = playerNode.rage_level
+	else:
+		$guy.position += (move_dir - $guy.position).normalized() / 4
 
 
 func _on_level_1_pressed():
@@ -53,3 +61,9 @@ func _on_level_1_pressed():
 
 func _on_message_timer_timeout():
 	$Message.hide()
+
+
+func _on_position_timer_timeout():
+	$guy.position = Vector2(randi_range(100, 700), randi_range(100, 300))
+	$guy.rotation = randi_range(0, 2 * PI)
+	move_dir = Vector2(randi_range(-50, 50), randi_range(-50, 50))
