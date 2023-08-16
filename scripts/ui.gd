@@ -34,6 +34,7 @@ func _process(delta):
 		$hotbar.show()
 		$RageMeter.show()
 	else:
+		$ObjectivePointer/level1.hide()
 		$How2Play.show()
 		$TextContainer/LevelText.hide()
 		$background.show()
@@ -67,6 +68,7 @@ func _on_level_1_pressed():
 	$Message.text = "LEVEL 1"
 	$TextContainer/LevelText.text = "1"
 	$Message/MessageTimer.start()
+	$ObjectivePointer/level1.show()
 
 
 func _on_message_timer_timeout():

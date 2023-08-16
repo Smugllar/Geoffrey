@@ -39,6 +39,8 @@ func _on_kitchen_body_entered(body):
 func cook():
 	if $Kitchen/EggPosition/egg.visible == true:
 		$Kitchen/EggPosition/egg.hide()
+	
+	$Kitchen/PanPosition/egg.show()
 	$Kitchen/PanPosition/Sizzle.play()
 	await get_tree().create_timer(34.0).timeout
 	$Kitchen/PanPosition/egg.hide()
