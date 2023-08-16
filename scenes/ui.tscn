@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dov61mpw8cwtp" path="res://assets/ui/smokinhotbar.png" id="1_1vvmi"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_51slt"]
-[ext_resource type="Texture2D" uid="uid://d0femrsocguoe" path="res://assets/player/guy upscaled.png" id="2_7dwou"]
+[ext_resource type="Texture2D" uid="uid://d4igj6ldbvdnf" path="res://assets/player/guy upscaled.png" id="2_7dwou"]
 [ext_resource type="Texture2D" uid="uid://cm0ma421xwt0k" path="res://assets/ui/faces/2-2.png" id="2_g7s62"]
 [ext_resource type="Texture2D" uid="uid://blhu13olvjdox" path="res://assets/ui/faces/2-3.png" id="3_g6j21"]
 [ext_resource type="Texture2D" uid="uid://ce1jh64vrebfs" path="res://assets/ui/faces/2-4.png" id="4_i1yll"]
@@ -57,9 +57,17 @@ animations = [{
 [node name="CanvasLayer" type="CanvasLayer" groups=["hud", "main"]]
 script = ExtResource("1_51slt")
 
+[node name="background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00784314, 0.0156863, 0.027451, 1)
+
 [node name="guy" type="Sprite2D" parent="."]
 position = Vector2(400, 200)
-scale = Vector2(3, 3)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_7dwou")
 
 [node name="PositionTimer" type="Timer" parent="guy"]
