@@ -10,6 +10,8 @@ var turn_speed = 2.0
 var move_dir = Vector2()
 var rage_dir = Vector2()
 var rage_priority = 0.0
+var grabbable = false
+var object
 
 #rage_level is what changes how angry you are (shocker)
 var rage_level = 0.0
@@ -86,9 +88,30 @@ func _physics_process(delta):
 	
 	angular_velocity += angle_diff / turn_speed * relevantDelta
 	
+	#handles the moving of the grabbable object
+	if grabbable:
+		if Input.is_action_pressed("grab"):
+			var grab_distance = 80
+			var grab_spot = position + Vector2(cos(rotation) * grab_distance, sin(rotation) * grab_distance)
+			var move_vect = grab_spot - object.position
+			var obj_distance = grab_spot.distance_to(object.position)
+			print(grab_spot, object.position, obj_distance)
+			object.linear_velocity += move_vect
+	
+	
 	#animations
 	$AnimatedSprite2D.speed_scale = linear_velocity.length() / 100
 	if linear_velocity.length() < 0.5:
 		$AnimatedSprite2D.animation = "idle"
 	else:
 		$AnimatedSprite2D.animation = "walk"
+
+
+
+func _on_grab_area_body_entered(body):
+	grabbable = true
+	object = body
+
+
+func _on_grab_area_body_exited(body):
+	grabbable = false

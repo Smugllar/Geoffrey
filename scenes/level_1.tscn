@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://6fqvnf2joriq"]
+[gd_scene load_steps=18 format=3 uid="uid://6fqvnf2joriq"]
 
 [ext_resource type="Texture2D" uid="uid://bgpykripw1n3k" path="res://assets/level one/background.png" id="1_08udh"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_y3l15"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c8vbqrwdxlf7b" path="res://scenes/bed.tscn" id="6_k7yen"]
 [ext_resource type="PackedScene" uid="uid://ffvcdyt0uath" path="res://scenes/small_box.tscn" id="7_h5jmr"]
 [ext_resource type="PackedScene" uid="uid://cq03d1q1jwstw" path="res://scenes/large_box.tscn" id="8_qidju"]
+[ext_resource type="PackedScene" uid="uid://bw8amc1qpqblu" path="res://scenes/frying_pan.tscn" id="10_s4ctu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qd46"]
 size = Vector2(338.5, 13)
@@ -118,3 +119,6 @@ position = Vector2(1108, 665)
 
 [node name="Large Box" parent="." instance=ExtResource("8_qidju")]
 position = Vector2(991, 523)
+
+[node name="Frying Pan" parent="." instance=ExtResource("10_s4ctu")]
+position = Vector2(1129, 496)
