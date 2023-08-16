@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqfag4tkvkwg1"]
+[gd_scene load_steps=16 format=3 uid="uid://dqfag4tkvkwg1"]
 
 [ext_resource type="Texture2D" uid="uid://dov61mpw8cwtp" path="res://assets/ui/smokinhotbar.png" id="1_1vvmi"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_51slt"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bjrdjvt7ytpfe" path="res://assets/ui/rage meter.png" id="10_p2yon"]
 [ext_resource type="Texture2D" uid="uid://cxkt1yxillxdk" path="res://assets/ui/rage meter fill.png" id="11_525fn"]
 [ext_resource type="Theme" uid="uid://deifnwmvr372j" path="res://assets/font/theme.tres" id="12_p0pa1"]
+[ext_resource type="Texture2D" uid="uid://c40qnvdw4wqg5" path="res://assets/ui/geoffrey.png" id="14_658rt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2puau"]
 animations = [{
@@ -142,6 +143,11 @@ vertical_alignment = 1
 [node name="MessageTimer" type="Timer" parent="Message"]
 wait_time = 3.0
 one_shot = true
+
+[node name="Geoffrey" type="Sprite2D" parent="."]
+position = Vector2(400, 150)
+scale = Vector2(2, 2)
+texture = ExtResource("14_658rt")
 
 [connection signal="timeout" from="guy/PositionTimer" to="." method="_on_position_timer_timeout"]
 [connection signal="pressed" from="LevelContainer/Level1" to="." method="_on_level_1_pressed"]
