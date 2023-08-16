@@ -25,6 +25,7 @@ func _ready():
 func _process(delta):
 	#showing and hiding the ui
 	if in_game:
+		$background.hide()
 		$guy.hide()
 		$Geoffrey.hide()
 		$LevelContainer.hide()
@@ -32,6 +33,7 @@ func _process(delta):
 		$hotbar.show()
 		$RageMeter.show()
 	else:
+		$background.show()
 		$guy.show()
 		$Geoffrey.show()
 		$LevelContainer.show()
