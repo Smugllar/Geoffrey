@@ -29,3 +29,7 @@ func died():
 func reset():
 	await get_tree().create_timer(3.0).timeout
 	$MenuMusic.play()
+
+func win():
+	await get_tree().create_timer(3.0).timeout
+	$MenuMusic.play()

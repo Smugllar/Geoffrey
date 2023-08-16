@@ -93,3 +93,10 @@ func _on_check_button_toggled(button_pressed):
 		$How2Play/ColorRect.show()
 	else:
 		$How2Play/ColorRect.hide()
+
+func win():
+	$Message.show()
+	$Message.text = "YOU WIN!!"
+	$Message/MessageTimer.start()
+	await get_tree().create_timer(3.0).timeout
+	in_game = false

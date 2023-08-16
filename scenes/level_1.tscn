@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://6fqvnf2joriq"]
+[gd_scene load_steps=25 format=3 uid="uid://6fqvnf2joriq"]
 
 [ext_resource type="Texture2D" uid="uid://bgpykripw1n3k" path="res://assets/level one/background.png" id="1_08udh"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_y3l15"]
@@ -39,6 +39,9 @@ size = Vector2(23.25, 940)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f75ij"]
 size = Vector2(93, 235)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btnen"]
+size = Vector2(112, 125)
 
 [node name="Level 1" type="Node2D" groups=["main"]]
 script = ExtResource("1_y3l15")
@@ -168,4 +171,12 @@ texture = ExtResource("12_kjrjf")
 position = Vector2(9, -1)
 texture = ExtResource("13_58fny")
 
+[node name="LeaveArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveArea"]
+position = Vector2(65, 833)
+shape = SubResource("RectangleShape2D_btnen")
+debug_color = Color(0.992157, 0.0705882, 0.152941, 0.419608)
+
 [connection signal="body_entered" from="Kitchen" to="." method="_on_kitchen_body_entered"]
+[connection signal="body_entered" from="LeaveArea" to="." method="_on_leave_area_body_entered"]
