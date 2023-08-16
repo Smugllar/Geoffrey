@@ -24,6 +24,7 @@ func _ready():
 func _process(delta):
 	#showing and hiding the ui
 	if in_game:
+		$TextContainer/LevelText.show()
 		$background.hide()
 		$guy.hide()
 		$Geoffrey.hide()
@@ -32,6 +33,7 @@ func _process(delta):
 		$hotbar.show()
 		$RageMeter.show()
 	else:
+		$TextContainer/LevelText.hide()
 		$background.show()
 		$guy.show()
 		$Geoffrey.show()
@@ -61,6 +63,7 @@ func _on_level_1_pressed():
 	level_1.emit()
 	$Message.show()
 	$Message.text = "LEVEL 1"
+	$TextContainer/LevelText.text = "1"
 	$Message/MessageTimer.start()
 
 
