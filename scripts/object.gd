@@ -18,10 +18,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	var relevantDelta = delta * 60
 	for body in get_colliding_bodies():
 		if body == playerNode and playerNode.rage_level >= 2:
-			health -= 1
+			health -= 1 * relevantDelta
 	
 	if health <= 0:
-		destroyed.emit()
+		get_tree().call_group("main", "destroyed")
 		queue_free()

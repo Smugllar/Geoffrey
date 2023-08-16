@@ -11,10 +11,9 @@ extends Node
 func _ready():
 	$MenuMusic.play()
 
+func destroyed():
+	$Destroy.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func level_1():
 	add_child(Level1.instantiate())
