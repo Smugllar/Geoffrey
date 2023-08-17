@@ -24,7 +24,7 @@ func _ready():
 func _process(delta):
 	#showing and hiding the ui
 	if in_game:
-		$dlc.hide()
+		$dlc.show()
 		$How2Play.hide()
 		$TextContainer/LevelText.show()
 		$background.hide()
@@ -35,7 +35,7 @@ func _process(delta):
 		$hotbar.show()
 		$RageMeter.show()
 	else:
-		$dlc.show()
+		$dlc.hide()
 		$ObjectivePointer/level1.hide()
 		$How2Play.show()
 		$TextContainer/LevelText.hide()
