@@ -115,22 +115,26 @@ icon_alignment = 1
 [node name="Level2" type="Button" parent="LevelContainer"]
 layout_mode = 2
 theme = ExtResource("12_p0pa1")
-text = "Level 2"
+text = "Level 2
+(DLC)"
 
 [node name="Level3" type="Button" parent="LevelContainer"]
 layout_mode = 2
 theme = ExtResource("12_p0pa1")
-text = "Level 3"
+text = "Level 3
+(DLC)"
 
 [node name="Level4" type="Button" parent="LevelContainer"]
 layout_mode = 2
 theme = ExtResource("12_p0pa1")
-text = "Level 4"
+text = "Level 4
+(DLC)"
 
 [node name="Level5" type="Button" parent="LevelContainer"]
 layout_mode = 2
 theme = ExtResource("12_p0pa1")
-text = "Level 5"
+text = "Level 5
+(DLC)"
 
 [node name="Message" type="Label" parent="."]
 anchors_preset = 5
