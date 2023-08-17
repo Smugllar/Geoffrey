@@ -24,6 +24,7 @@ func _ready():
 func _process(delta):
 	#showing and hiding the ui
 	if in_game:
+		$dlc.show()
 		$How2Play.hide()
 		$TextContainer/LevelText.show()
 		$background.hide()
@@ -34,6 +35,8 @@ func _process(delta):
 		$hotbar.show()
 		$RageMeter.show()
 	else:
+		$dlc.hide()
+		$ObjectivePointer/level1.hide()
 		$How2Play.show()
 		$TextContainer/LevelText.hide()
 		$background.show()
@@ -67,6 +70,7 @@ func _on_level_1_pressed():
 	$Message.text = "LEVEL 1"
 	$TextContainer/LevelText.text = "1"
 	$Message/MessageTimer.start()
+	$ObjectivePointer/level1.show()
 
 
 func _on_message_timer_timeout():
@@ -91,3 +95,10 @@ func _on_check_button_toggled(button_pressed):
 		$How2Play/ColorRect.show()
 	else:
 		$How2Play/ColorRect.hide()
+
+func win():
+	$Message.show()
+	$Message.text = "YOU WIN!!"
+	$Message/MessageTimer.start()
+	await get_tree().create_timer(3.0).timeout
+	in_game = false

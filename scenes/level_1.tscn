@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://6fqvnf2joriq"]
+[gd_scene load_steps=25 format=3 uid="uid://6fqvnf2joriq"]
 
 [ext_resource type="Texture2D" uid="uid://bgpykripw1n3k" path="res://assets/level one/background.png" id="1_08udh"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_y3l15"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://cq03d1q1jwstw" path="res://scenes/large_box.tscn" id="8_qidju"]
 [ext_resource type="PackedScene" uid="uid://bw8amc1qpqblu" path="res://scenes/frying_pan.tscn" id="10_s4ctu"]
 [ext_resource type="Texture2D" uid="uid://be3bjxkxabqg2" path="res://assets/objectives/frying pan.png" id="11_kjdqm"]
+[ext_resource type="Texture2D" uid="uid://bhrp72y7k5hwa" path="res://assets/objectives/eg.png" id="12_kjrjf"]
+[ext_resource type="PackedScene" uid="uid://bbihn5uat10tj" path="res://scenes/egg.tscn" id="12_y6lv8"]
+[ext_resource type="Texture2D" uid="uid://cojjcug27p554" path="res://assets/objectives/fried eg on plate.png" id="13_58fny"]
+[ext_resource type="AudioStream" uid="uid://c0nhqi6mped8n" path="res://assets/audio/sizzle.mp3" id="14_7f5gp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qd46"]
 size = Vector2(338.5, 13)
@@ -35,6 +39,9 @@ size = Vector2(23.25, 940)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f75ij"]
 size = Vector2(93, 235)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btnen"]
+size = Vector2(112, 125)
 
 [node name="Level 1" type="Node2D" groups=["main"]]
 script = ExtResource("1_y3l15")
@@ -127,6 +134,9 @@ position = Vector2(991, 523)
 [node name="Frying Pan" parent="." instance=ExtResource("10_s4ctu")]
 position = Vector2(1129, 496)
 
+[node name="Egg" parent="." instance=ExtResource("12_y6lv8")]
+position = Vector2(42, 714)
+
 [node name="Kitchen" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
@@ -139,7 +149,34 @@ debug_color = Color(0.352941, 0.603922, 0.372549, 0.419608)
 [node name="PanPosition" type="Marker2D" parent="Kitchen"]
 position = Vector2(228, 590)
 
-[node name="Sprite2D" type="Sprite2D" parent="Kitchen/PanPosition"]
+[node name="pan" type="Sprite2D" parent="Kitchen/PanPosition"]
 texture = ExtResource("11_kjdqm")
 
+[node name="egg" type="Sprite2D" parent="Kitchen/PanPosition"]
+position = Vector2(-12, -10)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_kjrjf")
+
+[node name="Sizzle" type="AudioStreamPlayer2D" parent="Kitchen/PanPosition"]
+stream = ExtResource("14_7f5gp")
+
+[node name="EggPosition" type="Marker2D" parent="Kitchen"]
+position = Vector2(222, 694)
+
+[node name="egg" type="Sprite2D" parent="Kitchen/EggPosition"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_kjrjf")
+
+[node name="meal" type="Sprite2D" parent="Kitchen/EggPosition"]
+position = Vector2(9, -1)
+texture = ExtResource("13_58fny")
+
+[node name="LeaveArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveArea"]
+position = Vector2(65, 833)
+shape = SubResource("RectangleShape2D_btnen")
+debug_color = Color(0.992157, 0.0705882, 0.152941, 0.419608)
+
 [connection signal="body_entered" from="Kitchen" to="." method="_on_kitchen_body_entered"]
+[connection signal="body_entered" from="LeaveArea" to="." method="_on_leave_area_body_entered"]

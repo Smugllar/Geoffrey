@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dqfag4tkvkwg1"]
+[gd_scene load_steps=19 format=3 uid="uid://dqfag4tkvkwg1"]
 
 [ext_resource type="Texture2D" uid="uid://dov61mpw8cwtp" path="res://assets/ui/smokinhotbar.png" id="1_1vvmi"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_51slt"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://cxkt1yxillxdk" path="res://assets/ui/rage meter fill.png" id="11_525fn"]
 [ext_resource type="Theme" uid="uid://deifnwmvr372j" path="res://assets/font/theme.tres" id="12_p0pa1"]
 [ext_resource type="Texture2D" uid="uid://c40qnvdw4wqg5" path="res://assets/ui/geoffrey.png" id="14_658rt"]
+[ext_resource type="Texture2D" uid="uid://bhrp72y7k5hwa" path="res://assets/objectives/eg.png" id="15_qb2vf"]
+[ext_resource type="Texture2D" uid="uid://be3bjxkxabqg2" path="res://assets/objectives/frying pan.png" id="16_kmeti"]
+[ext_resource type="Texture2D" uid="uid://cojjcug27p554" path="res://assets/objectives/fried eg on plate.png" id="17_a7jkq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2puau"]
 animations = [{
@@ -112,22 +115,26 @@ icon_alignment = 1
 [node name="Level2" type="Button" parent="LevelContainer"]
 layout_mode = 2
 theme = ExtResource("12_p0pa1")
-text = "Level 2"
+text = "Level 2
+(DLC)"
 
 [node name="Level3" type="Button" parent="LevelContainer"]
 layout_mode = 2
 theme = ExtResource("12_p0pa1")
-text = "Level 3"
+text = "Level 3
+(DLC)"
 
 [node name="Level4" type="Button" parent="LevelContainer"]
 layout_mode = 2
 theme = ExtResource("12_p0pa1")
-text = "Level 4"
+text = "Level 4
+(DLC)"
 
 [node name="Level5" type="Button" parent="LevelContainer"]
 layout_mode = 2
 theme = ExtResource("12_p0pa1")
-text = "Level 5"
+text = "Level 5
+(DLC)"
 
 [node name="Message" type="Label" parent="."]
 anchors_preset = 5
@@ -221,6 +228,32 @@ the objectives to a place in the level
 that would make sense and then once
 you do all that you can leave and then 
 you win"
+
+[node name="ObjectivePointer" type="Marker2D" parent="."]
+
+[node name="level1" type="Node2D" parent="ObjectivePointer"]
+
+[node name="egg" type="Sprite2D" parent="ObjectivePointer/level1"]
+position = Vector2(43, 549)
+texture = ExtResource("15_qb2vf")
+
+[node name="pan" type="Sprite2D" parent="ObjectivePointer/level1"]
+position = Vector2(110, 516)
+texture = ExtResource("16_kmeti")
+
+[node name="meal" type="Sprite2D" parent="ObjectivePointer/level1"]
+position = Vector2(167, 545)
+texture = ExtResource("17_a7jkq")
+
+[node name="dlc" type="Label" parent="."]
+offset_left = 653.0
+offset_top = 507.0
+offset_right = 748.0
+offset_bottom = 551.0
+theme = ExtResource("12_p0pa1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "(DLC)"
 
 [connection signal="timeout" from="guy/PositionTimer" to="." method="_on_position_timer_timeout"]
 [connection signal="pressed" from="LevelContainer/Level1" to="." method="_on_level_1_pressed"]

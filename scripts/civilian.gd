@@ -1,7 +1,5 @@
 extends RigidBody2D
 
-signal died()
-
 const SPEED = 50.0
 
 #possibly confusingly, the higher then number, the slower it turns (maybe i should come up with a better variable name)
@@ -69,7 +67,6 @@ func _physics_process(delta):
 			get_tree().call_group("main", "died")
 		alive = false
 		$hitbox.disabled = true
-		died.emit()
 
 	
 	

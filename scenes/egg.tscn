@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbihn5uat10tj"]
+
+[ext_resource type="Texture2D" uid="uid://bhrp72y7k5hwa" path="res://assets/objectives/eg.png" id="1_4kqpg"]
+[ext_resource type="Script" path="res://scripts/egg.gd" id="1_refit"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8mtyy"]
+radius = 16.1245
+
+[node name="Egg" type="RigidBody2D" groups=["EGG", "objective"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_refit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8mtyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4kqpg")
