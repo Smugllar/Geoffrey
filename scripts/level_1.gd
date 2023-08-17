@@ -5,6 +5,7 @@ var egg = false
 var meal = false
 
 func _ready():
+	$Music.play()
 	$Kitchen/PanPosition/pan.hide()
 	$Kitchen/PanPosition/egg.hide()
 	$Kitchen/EggPosition/egg.hide()

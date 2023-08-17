@@ -31,5 +31,6 @@ func reset():
 	$MenuMusic.play()
 
 func win():
+	$Win.play()
 	await get_tree().create_timer(3.0).timeout
 	$MenuMusic.play()
