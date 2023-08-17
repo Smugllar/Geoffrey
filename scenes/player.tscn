@@ -33,7 +33,7 @@ radius = 43.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ckfd"]
 radius = 69.029
 
-[node name="Player" type="RigidBody2D" groups=["player"]]
+[node name="Player" type="RigidBody2D" groups=["main", "player"]]
 position = Vector2(0, 1)
 gravity_scale = 0.0
 linear_damp = 5.0

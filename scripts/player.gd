@@ -12,6 +12,7 @@ var rage_dir = Vector2()
 var rage_priority = 0.0
 var grabbable = false
 var object
+var can_move = true
 
 #rage_level is what changes how angry you are (shocker)
 var rage_level = 0.0
@@ -78,7 +79,8 @@ func _physics_process(delta):
 	if move_dir != Vector2.ZERO:
 		move_dir = move_dir.normalized()
 	
-	linear_velocity += ( (move_dir * (1 - rage_priority) ) + (rage_dir * rage_priority) ) * speed * relevantDelta
+	if can_move:
+		linear_velocity += ( (move_dir * (1 - rage_priority) ) + (rage_dir * rage_priority) ) * speed * relevantDelta
 	
 	#turn towards the direction of movement
 	var angle_diff = 0.0 
@@ -113,3 +115,7 @@ func _on_grab_area_body_entered(body):
 
 func _on_grab_area_body_exited(_body):
 	grabbable = false
+
+func win():
+	can_move = false
+	
