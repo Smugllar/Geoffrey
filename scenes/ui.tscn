@@ -222,12 +222,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "so basically like you move around and
 stuff with wasd and arrow keys and
 you hold objects with space and you
-take your meds with Z or E (if you
-have them) also you want to bring
-the objectives to a place in the level
-that would make sense and then once
-you do all that you can leave and then 
-you win"
+take your meds (DLC) with Z or E (if you have them) also you want to bring the objectives to a place in the level that would make sense and then once you do all that you can leave and then you win"
+autowrap_mode = 3
 
 [node name="ObjectivePointer" type="Marker2D" parent="."]
 
